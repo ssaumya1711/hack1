@@ -42,6 +42,13 @@ function loadUsers(users) {
       <li><span class="property">postal_code:</span> ${user.postal_code}</li>
       <li><span class="property">country:</span> ${user.country}</li>
       </ul>`;
+    let phone = document.createElement("li");
+    if (user.phone == null) {
+      phone.innerHTML = `<span class="property">phone:</span> N/A`;
+    } else {
+      phone.innerHTML = `<span class="property">phone:</span> ${user.phone}`;
+    }
+    userContainer.querySelector(".list").appendChild(phone);
     let website = document.createElement("li");
     if (user.website_url == null) {
       website.innerHTML = `<span class="property">website_url: </span>N/A`;
